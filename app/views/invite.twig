@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHPMG - Slack</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 class="text-center">PHPMG no Slack</h1>
+
+    <div class="well">
+        Informe seu e-mail e nome para receber um convite para participar do grupo do PHPMG no Slack.
+    </div>
+
+    {% set user = app.flashbag.get('user')|first %}
+
+    {% if app.flashbag.get('fail')|length == 1 %}
+        <div class="alert alert-danger">
+            Nome ou e-mail inválidos.
+        </div>
+    {% endif %}
+
+    {% if app.flashbag.get('success')|length == 1 %}
+        <div class="alert alert-success">
+            Convite enviado com sucesso. Siga as instruções contidas na mensagem enviada ao seu e-mail.
+        </div>
+    {% endif %}
+
+    <form action="/invite" method="post">
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" name="email" value="{{ user ? user.email }}">
+        </div>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" name="name" value="{{ user ? user.name }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar convite</button>
+    </form>
+
+</div>
+
+</body>
+</html>

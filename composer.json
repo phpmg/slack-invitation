@@ -1,0 +1,11 @@
+{
+	"autoload": {
+        "psr-4": {"Phpmg\\": "src/"}
+    },
+	"require": {
+		"vluzrmos/slack-api": "~0.0",
+        "silex/silex": "~1.2",
+		"twig/twig": "~1.18",
+		"respect/validation": "0.8.*"
+	}
+}

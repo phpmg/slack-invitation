@@ -1,0 +1,12 @@
+body {
+    font-size: 13px;
+    padding: 20px 0;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 400px;
+}

@@ -1,0 +1,4 @@
+*.DS_Store
+deploy.rsync
+.rsyncignore
+.idea

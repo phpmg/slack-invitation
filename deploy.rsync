@@ -1,0 +1,1 @@
+rsync -avz --progress -e ssh --exclude-from=.rsyncignore ./ forge@grossi.io:slack.phpmg.com
