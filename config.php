@@ -1,4 +1,6 @@
-<?php return [
+<?php
+
+return [
 
     /**
      * The slack token
@@ -10,10 +12,10 @@
      * The slack name
      * Name of the slack team
      */
-    'slack_name' => "PHPMG",
+    'slack_name' => getenv('SLACK_NAME') ?: "PHPMG",
 
     /**
      * Enable/Disable debug mode
      */
-    'debug' => true,
+    'debug' => getenv('SLACK_DEBUG') ?: false,
 ];
