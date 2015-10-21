@@ -12,10 +12,10 @@ return [
      * The slack name
      * Name of the slack team
      */
-    'slack_name' => getenv('SLACK_NAME') ? getenv('SLACK_NAME') : "PHPMG",
+    'slack_name' => getenv('SLACK_NAME') ?: "PHPMG",
 
     /**
      * Enable/Disable debug mode
      */
-    'debug' => getenv('SLACK_DEBUG') ? getenv('SLACK_DEBUG') : false,
+    'debug' => getenv('SLACK_DEBUG') ?: false,
 ];
