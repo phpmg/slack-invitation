@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PHPMG - Slack</title>
+    <title>{{ app.slack_name }} - Slack</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -10,10 +10,10 @@
 
 <div class="container">
 
-    <h1 class="text-center">PHPMG no Slack</h1>
+    <h1 class="text-center">{{ app.slack_name }} no Slack</h1>
 
     <div class="well">
-        Informe seu e-mail e nome para receber um convite para participar do grupo do PHPMG no Slack.
+        Informe seu e-mail e nome para receber um convite para participar do grupo {{ app.slack_name }} no Slack.
     </div>
 
     {% set user = app.flashbag.get('user')|first %}

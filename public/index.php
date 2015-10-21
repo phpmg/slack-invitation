@@ -16,7 +16,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../app/views',
 ));
 
-$app['debug'] = true;
+$app['debug'] = $config['debug'];
+$app['slack_name'] = $config['slack_name'];
 
 $app['flashbag'] = $app->share(function (Application $app) {
     return $app['session']->getFlashBag();
