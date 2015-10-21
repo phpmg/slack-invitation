@@ -8,6 +8,12 @@ use GuzzleHttp\Client;
 
 $config = require __DIR__.'/../config.php';
 
+if (is_null($config['slack_token']) || empty($config['slack_token'])) {
+    http_response_code(500);
+    echo '<p>You must define the slack_token before run this application!</p>';
+    exit;
+}
+
 $app = new Application();
 
 $app->register(new Silex\Provider\SessionServiceProvider());
@@ -16,8 +22,8 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../app/views',
 ));
 
-$app['debug'] = $config['debug'];
 $app['slack_name'] = $config['slack_name'];
+$app['debug'] = $config['debug'];
 
 $app['flashbag'] = $app->share(function (Application $app) {
     return $app['session']->getFlashBag();
