@@ -10,23 +10,23 @@
 
 <div class="container">
 
-    <h1 class="text-center">{{ app.slack_name }} no Slack</h1>
+    <h1 class="text-center">{{ app.slack_name }} Slack</h1>
 
     <div class="well">
-        Informe seu e-mail e nome para receber um convite para participar do grupo {{ app.slack_name }} no Slack.
+        Enter your e-mail and name to receive an invitation to the devhellpodcast Slack.
     </div>
 
     {% set user = app.flashbag.get('user')|first %}
 
     {% if app.flashbag.get('fail')|length == 1 %}
         <div class="alert alert-danger">
-            Nome ou e-mail inválidos.
+            Invalid Name or Email.
         </div>
     {% endif %}
 
     {% if app.flashbag.get('success')|length == 1 %}
         <div class="alert alert-success">
-            Convite enviado com sucesso. Siga as instruções contidas na mensagem enviada ao seu e-mail.
+            Invitation successfully sent. Follow the instructions contained in the message sent to your e-mail.
         </div>
     {% endif %}
 
@@ -36,10 +36,10 @@
             <input type="text" class="form-control" name="email" value="{{ user ? user.email }}">
         </div>
         <div class="form-group">
-            <label for="name">Nome</label>
+            <label for="name">Name</label>
             <input type="text" class="form-control" name="name" value="{{ user ? user.name }}">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar convite</button>
+        <button type="submit" class="btn btn-primary">Send invitation</button>
     </form>
 
 </div>
