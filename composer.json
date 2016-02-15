@@ -6,6 +6,7 @@
 		"vluzrmos/slack-api": "~0.0",
         "silex/silex": "~1.2",
 		"twig/twig": "~1.18",
-		"respect/validation": "0.8.*"
+		"respect/validation": "0.8.*",
+		"vlucas/phpdotenv": "^2.2"
 	}
 }
