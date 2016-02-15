@@ -5,14 +5,17 @@ use Silex\Application;
 use Phpmg\Slack\Invitation as SlackInvitation;
 use Vluzrmos\SlackApi\SlackApi;
 use GuzzleHttp\Client;
+use Dotenv\Dotenv;
 
+/*
+ * init dotenv stuff
+ */
+$dotenv = new Dotenv(__DIR__ . '/../');
+$dotenv->load();
+// this will throw an exception if these aren't set
+$dotenv->required(['SLACK_NAME', 'SLACK_TOKEN']);
+// the env vars will be used in the config
 $config = require __DIR__.'/../config.php';
-
-if (is_null($config['slack_token']) || empty($config['slack_token'])) {
-    http_response_code(500);
-    echo '<p>You must define the slack_token before run this application!</p>';
-    exit;
-}
 
 $app = new Application();
 
