@@ -29,8 +29,7 @@ $app['flashbag'] = $app->share(function (Application $app) {
     return $app['session']->getFlashBag();
 });
 
-$app->get('/', function () use($app) {
-
+$app->get('/', function () use ($app) {
     return $app['twig']->render('invite.twig');
 });
 
