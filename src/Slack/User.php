@@ -63,7 +63,7 @@ class User
     {
         $validator = $this->getValidator();
 
-        return $validator->string()->notEmpty()->validate($this->getName()) and
+        return $validator->stringType()->notEmpty()->validate($this->getName()) and
             $validator->email()->validate($this->getEmail());
     }
 

@@ -3,9 +3,10 @@
         "psr-4": {"Phpmg\\": "src/"}
     },
 	"require": {
-		"vluzrmos/slack-api": "~0.0",
+		"php": ">=7.3",
+		"vluzrmos/slack-api": "0.0.6",
         "silex/silex": "~1.2",
 		"twig/twig": "~1.18",
-		"respect/validation": "0.8.*"
+		"respect/validation": "2.2.*"
 	}
 }
