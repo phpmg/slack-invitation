@@ -6,7 +6,7 @@
 		"php": ">=7.3",
 		"vluzrmos/slack-api": "0.0.6",
         "silex/silex": "~1.2",
-		"twig/twig": "~1.18",
+		"twig/twig": "~3.11",
 		"respect/validation": "2.2.*"
 	}
 }
